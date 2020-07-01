@@ -45,7 +45,7 @@ public final class MineableSpawners extends JavaPlugin {
             System.out.println("[MineableSpawners] vault not found, economy features disabled.");
         }
 
-        getCommand("mineablespawners").setExecutor(new MineableSpawnersCommand(this));
+        getCommand("ms").setExecutor(new MineableSpawnersCommand(this));
 
         PluginManager pm = getServer().getPluginManager();
         pm.registerEvents(new SpawnerMineListener(this), this);
@@ -54,13 +54,13 @@ public final class MineableSpawners extends JavaPlugin {
         pm.registerEvents(new AnvilRenameListener(this), this);
         pm.registerEvents(new SpawnerExplodeListener(this), this);
 
-        StringBuilder str = new StringBuilder("[MineableSpawners] Available mob types: \n");
-        for (EntityType type : EntityType.values()) {
-            str.append("- ");
-            str.append(type.name());
-            str.append("\n");
-        }
-        System.out.println(str.toString());
+//        StringBuilder str = new StringBuilder("[MineableSpawners] Available mob types: \n");
+//        for (EntityType type : EntityType.values()) {
+//            str.append("- ");
+//            str.append(type.name());
+//            str.append("\n");
+//        }
+//        System.out.println(str.toString());
 
         api = new API(this);
         int pluginId = 7354;
